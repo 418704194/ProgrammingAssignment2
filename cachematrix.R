@@ -3,12 +3,14 @@
 ## use scope rules to save data 
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
+  ## save data with scope rules
   set <- function(y) {
     x <<- y
     m <<- NULL
   }
   get <- function() x
   setinv <- function(inv) inv <<- inv
+  ## get data
   getinv <- function() inv
   list(set = set, get = get,
        setinv = setinv,
